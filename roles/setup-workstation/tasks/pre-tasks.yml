@@ -10,7 +10,13 @@
        - git
      state: latest 
 - name: Install openstack library
-  command: pip3 install ansible openstacksdk -U
+#  command: pip3 install ansible openstacksdk -U
+  command: pip3 install -U pip ansible openstacksdk python-openstackclient selinux 
+- name: Install libselinux
+  yum: 
+     name:
+       - python3-libselinux
+     state: latest 
 - name: Create clouds.yaml file
   blockinfile:
     create: yes
