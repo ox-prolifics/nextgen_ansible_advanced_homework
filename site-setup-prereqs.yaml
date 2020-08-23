@@ -18,7 +18,3 @@
     - osp-setup
 
 - import_playbook: site-install-isolated-node.yaml
-
-
-
-
