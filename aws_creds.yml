@@ -1,6 +1,6 @@
 - hosts: tag_AnsibleGroup_bastions
   gather_facts: true
-  remote_user: ox-prolifics
+  remote_user: ec2-user
   become: true
   tasks:
   - name: Install required packages 
