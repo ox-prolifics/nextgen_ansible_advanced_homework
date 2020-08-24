@@ -8,10 +8,14 @@
     replace: 'Defaults  !requiretty'
     backup: yes
 
+- name: Update yum-rhn-plugin
+  command: "yum update yum-rhn-plugin"
+
 - name: add repo
   template:
     src: repos_template.j2
-    dest: /etc/yum.repos.d/open_three-tier-app.repo
+    dest: /etc/yum.repos.d/epel.repo
+#    dest: /etc/yum.repos.d/open_three-tier-app.repo
     mode: 0644
 
 - name: enable repos
