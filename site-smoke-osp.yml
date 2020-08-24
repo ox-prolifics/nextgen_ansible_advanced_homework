@@ -6,7 +6,7 @@
       cloud: openstack
       region_name: regionOne
       server: front*
-    register: servers
+    register: r_os_servers
 
   - name: Add host
     add_host:
@@ -18,7 +18,7 @@
 
   - name: capture frontend IP
     set_fact:
-      frontendIP: "{{ servers.openstack_servers[0].accessIPv4 }}"
+      frontendIP: "{{ r_os_servers.openstack_servers[0].accessIPv4 }}"
 
   - name: Check webserver for correct response
     uri:

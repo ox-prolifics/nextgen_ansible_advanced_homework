@@ -1,5 +1,4 @@
 ---
-
 # tasks file for osp.servers
 - name: Create new server instances and attaches them a network and passes metadata to the instance
   os_server:
@@ -17,8 +16,9 @@
     userdata: |
       #!/bin/bash
       curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
-      curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pem
+      curl -o /tmp/openstack.pem http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pem
       cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+      cp /tmp/openstack.pem /home/cloud-user/.ssh/.
       cat /tmp/openstack.pem >> /home/cloud-user/.ssh/authorized_keys
       curl -o /tmp/internal.repo  http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
       cp /tmp/internal.repo  /etc/yum.repos.d/
