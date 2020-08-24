@@ -9,7 +9,10 @@
     backup: yes
 
 - name: Update yum-rhn-plugin
-  command: "yum update yum-rhn-plugin"
+#  shell: "yum update yum-rhn-plugin"
+  yum:
+    name: yum-rhn-plugin
+    state: latest
 
 - name: add repo
   template:
