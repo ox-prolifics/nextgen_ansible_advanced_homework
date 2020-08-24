@@ -1,6 +1,6 @@
 - hosts: tag_AnsibleGroup_bastions
   gather_facts: true
-  remote_user: root
+  remote_user: $OPENTLC_ID 
   become: true
   tasks:
   - name: Install required packages 
