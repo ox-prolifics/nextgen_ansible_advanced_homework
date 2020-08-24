@@ -20,8 +20,8 @@
       cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
       cp /tmp/openstack.pem /home/cloud-user/.ssh/.
       cat /tmp/openstack.pem >> /home/cloud-user/.ssh/authorized_keys
-      curl -o /tmp/internal.repo  http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
-      cp /tmp/internal.repo  /etc/yum.repos.d/
+#      curl -o /tmp/internal.repo  http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
+#      cp /tmp/internal.repo  /etc/yum.repos.d/
   with_subelements:
     - "{{osp_servers}}"
     - meta
