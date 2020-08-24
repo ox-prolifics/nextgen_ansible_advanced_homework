@@ -8,17 +8,10 @@
     replace: 'Defaults  !requiretty'
     backup: yes
 
-- name: Update yum-rhn-plugin
-#  shell: "yum update yum-rhn-plugin"
-  yum:
-    name: yum-rhn-plugin
-    state: latest
-
-- name: add repo
+- name: enable repos
   template:
     src: repos_template.j2
-    dest: /etc/yum.repos.d/epel.repo
-#    dest: /etc/yum.repos.d/open_three-tier-app.repo
+    dest: /etc/yum.repos.d/open_three-tier-app.repo
     mode: 0644
 
 - name: enable repos
@@ -29,8 +22,4 @@
     name:
       - httpd
       - haproxy
-      - python3
     state: latest
-
-- name: Install openstack library
-  command: pip3 install ansible openstacksdk -U
