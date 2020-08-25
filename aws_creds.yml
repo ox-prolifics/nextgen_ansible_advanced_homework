@@ -3,9 +3,9 @@
   remote_user: ox-prolifics.com
   become: true
   tasks:
-  - name: Wait for servers by name to be available
+  - name: Wait for server to be available
     wait_for:
-      timeout: 60
+      timeout: 600
   - name: Install required packages 
     yum: 
      name: "{{item}}"
