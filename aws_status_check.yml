@@ -10,4 +10,7 @@
     delegate_to: localhost
     with_items:
       - "{{ inventory_hostname }}"
-        
+  - debug:
+      msg: "{{ item }}"
+    delegate_to: localhost
+    with_items: "{{ inventory_hostname }}"      
