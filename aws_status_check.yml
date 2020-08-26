@@ -10,19 +10,19 @@
     delegate_to: localhost
     with_items:
       - "{{ inventory_hostname }}"
-  - name: Wait for servers to be available
-    wait_for:
-      host: "{{ item }}"
-      port: 22
-      search_regex: OpenSSH
-      timeout: 600
-    delegate_to: localhost
-    with_items: "{{ inventory_hostname }}"      
-  - name: Wait for connection
-    wait_for_connection:
-      timeout: 600
-  - name: ping
-    net_ping:
-      dest: "{{ item }}"
-    delegate_to: localhost
-    with_items: "{{ inventory_hostname }}"
+#  - name: Wait for servers to be available
+#    wait_for:
+#      host: "{{ item }}"
+#      port: 22
+#      search_regex: OpenSSH
+#      timeout: 600
+#    delegate_to: localhost
+#    with_items: "{{ inventory_hostname }}"      
+#  - name: Wait for connection
+#    wait_for_connection:
+#      timeout: 600
+#  - name: ping
+#    net_ping:
+#      dest: "{{ item }}"
+#    delegate_to: localhost
+#    with_items: "{{ inventory_hostname }}"
