@@ -5,9 +5,7 @@
   - name: Create workstation inventory
     add_host:
        name: "workstation-{{ lookup('env','OSP_GUID') }}.{{ lookup('env','OSP_DOMAIN') }}"
-#       name: "workstation-{{ lookup('env','OSP_GUID') }}.rhpds.opentlc.com"
        group: workstation
-
 
 - hosts: workstation
   become: yes
